@@ -23,7 +23,7 @@
             android:layout_width="240dp"
             android:layout_height="151dp"
             android:fontFamily="monospace"
-            android:text="Famous actor/singer from Hong Kong "
+            android:text="Famous actor/singer from HongKong "
             android:textColor="@android:color/black"
             android:textSize="24sp"
             android:typeface="normal"
