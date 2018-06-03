@@ -1,6 +1,7 @@
 package com.devin.sodamixer;
 
 import android.app.Activity;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
@@ -19,6 +20,8 @@ public class HomeActivity extends Activity {
 
     private HorizontalScrollView scrollView;
     private LinearLayout linear;
+    private final String[] sodaNames = {"Coca-cola", "Sprite", "Fanta", "Pepsi", "Diet Coke", "Dr Pepper"
+    , "Minutemaid", "Mt Dew", "Pure leaf", "Root Beer", "Pepsi"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,7 @@ public class HomeActivity extends Activity {
     }
 
     private void createChildLinearLayout() {
+        TypedArray sodaIconsArr = getResources().obtainTypedArray(R.array.soda_icon_array);
         for (int i = 0; i < 10; i++) {
             LinearLayout.LayoutParams linearLp = new LinearLayout.LayoutParams(
                     LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -42,13 +46,13 @@ public class HomeActivity extends Activity {
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                     LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
             ImageView imageView = new ImageView(this);
-            imageView.setBackgroundResource(R.mipmap.ic_launcher_coca_cola);
+            imageView.setBackgroundResource(sodaIconsArr.getResourceId(i, -1));
             myLinear.addView(imageView, lp);
 
             LinearLayout.LayoutParams textViewLp = new LinearLayout.LayoutParams(
                     LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
             TextView textView = new TextView(this);
-            textView.setText(i + "");
+            textView.setText(sodaNames[i]);
             textView.setGravity(Gravity.CENTER);
             myLinear.addView(textView, textViewLp);
 

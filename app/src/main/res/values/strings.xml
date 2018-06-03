@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">SodaMixer</string>
+    <string-array name="soda_icon_array">
+        <item>@mipmap/ic_launcher_coca_cola</item>
+        <item>@mipmap/ic_launcher_sprite</item>
+        <item>@mipmap/ic_launcher_fanta</item>
+        <item>@mipmap/ic_launcher_pepsi</item>
+        <item>@mipmap/ic_launcher_diet_coke</item>
+        <item>@mipmap/ic_launcher_dr_pepper</item>
+        <item>@mipmap/ic_launcher_minutemaid_lemonade</item>
+        <item>@mipmap/ic_launcher_mtdew</item>
+        <item>@mipmap/ic_launcher_pureleaf</item>
+        <item>@mipmap/ic_launcher_root_bear</item>
+        <item>@mipmap/ic_launcher_pepsi</item>
+    </string-array>
 </resources>
