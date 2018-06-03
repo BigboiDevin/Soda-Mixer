@@ -10,15 +10,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class HomeActivity extends Activity {
 
-    private HorizontalScrollView scrollView;
+    private ScrollView scrollView;
     private LinearLayout linear;
     private final String[] sodaNames = {"Coca-cola", "Sprite", "Fanta", "Pepsi", "Diet Coke", "Dr Pepper"
     , "Minutemaid", "Mt Dew", "Pure leaf", "Root Beer", "Pepsi"};
@@ -55,7 +54,7 @@ public class HomeActivity extends Activity {
             textView.setText(sodaNames[i]);
             textView.setGravity(Gravity.CENTER);
             myLinear.addView(textView, textViewLp);
-            myLinear.setOnClickListener(new View.OnClickListener() {
+            myLinear.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     imageView.getBackground().setAlpha(128);
