@@ -45,7 +45,7 @@ public class HomeActivity extends Activity {
 
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                     LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-            ImageView imageView = new ImageView(this);
+            final ImageView imageView = new ImageView(this);
             imageView.setBackgroundResource(sodaIconsArr.getResourceId(i, -1));
             myLinear.addView(imageView, lp);
 
@@ -55,14 +55,10 @@ public class HomeActivity extends Activity {
             textView.setText(sodaNames[i]);
             textView.setGravity(Gravity.CENTER);
             myLinear.addView(textView, textViewLp);
-
-            myLinear.setOnClickListener(new OnClickListener() {
-
+            myLinear.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // TODO Auto-generated method stub
-                    Toast.makeText(HomeActivity.this, v.getTag().toString(),
-                            Toast.LENGTH_SHORT).show();
+                    imageView.getBackground().setAlpha(128);
                 }
             });
         }
