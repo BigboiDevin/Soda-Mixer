@@ -6,45 +6,17 @@
     android:layout_height="match_parent"
     tools:context="com.devin.sodamixer.HomeActivity">
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/relativeLayout"
+    <HorizontalScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_height="wrap_content"
+        android:background="#00FF00"
+        android:scrollbarAlwaysDrawHorizontalTrack="false">
 
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="240dp"
-            android:layout_height="151dp"
-            android:fontFamily="monospace"
-            android:text="Famous actor/singer from HongKong "
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            android:typeface="normal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.041"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.45" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="229dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="36dp"
-            android:fontFamily="cursive"
-            android:text="Aaron Lam"
-            android:textColor="#0000ff"
-            android:textSize="30sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
 </android.support.constraint.ConstraintLayout>
