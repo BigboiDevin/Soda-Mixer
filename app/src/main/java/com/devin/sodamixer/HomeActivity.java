@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,12 +19,17 @@ import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+
 public class HomeActivity extends Activity {
 
     private ScrollView scrollView;
     private LinearLayout linear;
     private final String[] sodaNames = {"Coca-cola", "Sprite", "Fanta", "Pepsi", "Diet Coke", "Dr Pepper"
     , "Minutemaid", "Mt Dew", "Pure leaf", "Root Beer", "Pepsi"};
+    private int[] database = new int[10];
     private int progress = 24;
 
     @Override
@@ -120,6 +126,9 @@ public class HomeActivity extends Activity {
                             seekbarText.setText("Full cup");
                             break;
                     }
+                    int id = seekBar.getId();
+                    int value = seekBar.getProgress();
+                    saveDataBase(id, value);
                 }
 
                 @Override
@@ -150,6 +159,41 @@ public class HomeActivity extends Activity {
         }
     }
 
+    private void saveDataBase(int id, int value) {
+        switch(id) {
+            case R.id.seekbar_0:
+                database[0] = value;
+                break;
+            case R.id.seekbar_1:
+                database[1] = value;
+                break;
+            case R.id.seekbar_2:
+                database[2] = value;
+                break;
+            case R.id.seekbar_3:
+                database[3] = value;
+                break;
+            case R.id.seekbar_4:
+                database[4] = value;
+                break;
+            case R.id.seekbar_5:
+                database[5] = value;
+                break;
+            case R.id.seekbar_6:
+                database[6] = value;
+                break;
+            case R.id.seekbar_7:
+                database[7] = value;
+                break;
+            case R.id.seekbar_8:
+                database[8] = value;
+                break;
+            case R.id.seekbar_9:
+                database[9] = value;
+                break;
+        }
+    }
+
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main, menu);
@@ -166,6 +210,10 @@ public class HomeActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void submitForm(View v) {
+        Log.d("Test", Arrays.toString(database));
     }
 }
 

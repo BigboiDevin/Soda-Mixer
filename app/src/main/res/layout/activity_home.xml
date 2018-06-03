@@ -47,6 +47,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="54dp"
         android:layout_marginEnd="44dp"
+        android:onClick="submitForm"
         android:text="Next" />
 
 </RelativeLayout>
