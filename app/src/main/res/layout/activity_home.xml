@@ -35,7 +35,9 @@
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:textStyle="italic" />
+        android:textStyle="italic"
+        android:padding="10dp"
+        android:background="@drawable/back"/>
 
     <Button
         android:id="@+id/button"
