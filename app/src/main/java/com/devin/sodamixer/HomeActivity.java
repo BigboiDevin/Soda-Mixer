@@ -66,8 +66,42 @@ public class HomeActivity extends Activity {
             seekbar.setMax(4);
             seekbar.setProgress(0);
             final TextView seekbarText  =new TextView(this);
-            seekbarText.setTextSize(30);
+            seekbarText.setTextSize(13);
             seekbarText.setTextColor(Color.rgb(0, 0, 0));
+            seekbarText.setGravity(Gravity.CENTER);
+
+            seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                    switch (seekBar.getProgress()){
+                        case 0:
+                            seekbarText.setText("Empty cup");
+                            break;
+                        case 1:
+                            seekbarText.setText("Quarter cup");
+                            break;
+                        case 2:
+                            seekbarText.setText("Half cup");
+                            break;
+                        case 3:
+                            seekbarText.setText("Three quarter cup");
+                            break;
+                        case 4:
+                            seekbarText.setText("Full cup");
+                            break;
+                    }
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+
+                }
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+
+                }
+            });
 
             myLinear.setOnClickListener(new OnClickListener() {
                 @Override
