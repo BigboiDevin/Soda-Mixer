@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="seekbar_0" type="id"/>
+    <item name="seekbar_1" type="id"/>
+    <item name="seekbar_2" type="id"/>
+    <item name="seekbar_3" type="id"/>
+    <item name="seekbar_4" type="id"/>
+    <item name="seekbar_5" type="id"/>
+    <item name="seekbar_6" type="id"/>
+    <item name="seekbar_7" type="id"/>
+    <item name="seekbar_8" type="id"/>
+    <item name="seekbar_9" type="id"/>
+</resources>

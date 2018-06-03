@@ -55,8 +55,6 @@ public class HomeActivity extends Activity {
             final LinearLayout.LayoutParams textViewLp = new LinearLayout.LayoutParams(
                     LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 
-
-
             TextView textView = new TextView(this);
             textView.setText(sodaNames[i]);
             textView.setGravity(Gravity.CENTER);
@@ -69,6 +67,38 @@ public class HomeActivity extends Activity {
             seekbarText.setTextSize(13);
             seekbarText.setTextColor(Color.rgb(0, 0, 0));
             seekbarText.setGravity(Gravity.CENTER);
+            switch(i) {
+                case 0:
+                    seekbar.setId(R.id.seekbar_0);
+                    break;
+                case 1:
+                    seekbar.setId(R.id.seekbar_1);
+                    break;
+                case 2:
+                    seekbar.setId(R.id.seekbar_2);
+                    break;
+                case 3:
+                    seekbar.setId(R.id.seekbar_3);
+                    break;
+                case 4:
+                    seekbar.setId(R.id.seekbar_4);
+                    break;
+                case 5:
+                    seekbar.setId(R.id.seekbar_5);
+                    break;
+                case 6:
+                    seekbar.setId(R.id.seekbar_6);
+                    break;
+                case 7:
+                    seekbar.setId(R.id.seekbar_7);
+                    break;
+                case 8:
+                    seekbar.setId(R.id.seekbar_8);
+                    break;
+                case 9:
+                    seekbar.setId(R.id.seekbar_9);
+                    break;
+            }
 
             seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
