@@ -13,4 +13,6 @@
         <item>@mipmap/ic_launcher_root_bear</item>
         <item>@mipmap/ic_launcher_pepsi</item>
     </string-array>
+    <string name="facebook_app_id">606644523026506</string>
+    <string name="fb_login_protocol_scheme">fb606644523026506</string>
 </resources>
