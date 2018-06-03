@@ -2,6 +2,7 @@ package com.devin.sodamixer;
 
 import android.app.Activity;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
@@ -12,7 +13,9 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class HomeActivity extends Activity {
@@ -21,6 +24,7 @@ public class HomeActivity extends Activity {
     private LinearLayout linear;
     private final String[] sodaNames = {"Coca-cola", "Sprite", "Fanta", "Pepsi", "Diet Coke", "Dr Pepper"
     , "Minutemaid", "Mt Dew", "Pure leaf", "Root Beer", "Pepsi"};
+    private int progress = 24;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +40,7 @@ public class HomeActivity extends Activity {
         for (int i = 0; i < 10; i++) {
             LinearLayout.LayoutParams linearLp = new LinearLayout.LayoutParams(
                     LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-            LinearLayout myLinear = new LinearLayout(this);
+            final LinearLayout myLinear = new LinearLayout(this);
             linearLp.setMargins(5, 0, 5, 20);
             myLinear.setOrientation(LinearLayout.VERTICAL);
             myLinear.setTag(i);
@@ -48,16 +52,35 @@ public class HomeActivity extends Activity {
             imageView.setBackgroundResource(sodaIconsArr.getResourceId(i, -1));
             myLinear.addView(imageView, lp);
 
-            LinearLayout.LayoutParams textViewLp = new LinearLayout.LayoutParams(
+            final LinearLayout.LayoutParams textViewLp = new LinearLayout.LayoutParams(
                     LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+
+
+
             TextView textView = new TextView(this);
             textView.setText(sodaNames[i]);
             textView.setGravity(Gravity.CENTER);
             myLinear.addView(textView, textViewLp);
+
+            final SeekBar seekbar = new SeekBar(this);
+            seekbar.setMax(4);
+            seekbar.setProgress(0);
+            final TextView seekbarText  =new TextView(this);
+            seekbarText.setTextSize(30);
+            seekbarText.setTextColor(Color.rgb(0, 0, 0));
+
             myLinear.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    imageView.getBackground().setAlpha(128);
+                    if(imageView.getBackground().getAlpha() == 128) {
+                        myLinear.removeView(seekbar);
+                        myLinear.removeView(seekbarText);
+                        imageView.getBackground().setAlpha(255);
+                    } else {
+                        imageView.getBackground().setAlpha(128);
+                        myLinear.addView(seekbar, textViewLp);
+                        myLinear.addView(seekbarText,textViewLp);
+                    }
                 }
             });
         }
